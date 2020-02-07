@@ -22,6 +22,11 @@ export class AnalyticsService {
 
   }
 
+  get_departments(): Observable<any>{
+    let url=`${this.baseurl}departments`;
+    return this.http.get(url)
+  }
+
   get_attendance_details(usn:string,year:any,terms:any):Observable<any>{
     let url = `${this.baseurl}attendancedetails/${usn}/${year}/${terms}`
     return this.http.get(url)

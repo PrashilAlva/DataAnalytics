@@ -22,6 +22,7 @@ export class Statement1Component implements OnInit {
   terms;
   selectedyear;
   user_info;
+  selectedDept;
   showSpinner = false;
   display=false;
   testtt=false;
@@ -31,6 +32,7 @@ export class Statement1Component implements OnInit {
   notPlaced=false;
   set_role: any = "STUDENT";
   roles = [];
+  departments=[];
   constructor(private analyticsService: AnalyticsService, private authService: AuthService) { }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class Statement1Component implements OnInit {
     this.getAptRole()
     this.get_academic_years()
     this.get_term_numbers()
-    
+    this.get_departments()
   }
   getAptRole(){
     for(let r of this.roles)
@@ -70,6 +72,12 @@ export class Statement1Component implements OnInit {
       this.termnumbers = res['term_numbers']
     }
     )
+  }
+
+  get_departments(){
+    this.analyticsService.get_departments().subscribe(res=>{
+      this.departments=res['departments']
+    })
   }
   searchbutton() {
     this.showSpinner = true;

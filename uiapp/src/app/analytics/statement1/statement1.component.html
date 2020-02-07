@@ -109,7 +109,7 @@
             </mat-select>
         </div>
         <div class="col-md-2">
-            <mat-label class="labels">Semesters</mat-label>
+            <mat-label class="labels">Semester</mat-label>
             <mat-select name="terms"  [(ngModel)]="terms">
                 <mat-option *ngFor="let terms of termnumbers" [value]="terms">
                     Semester - {{terms}}
@@ -141,7 +141,7 @@
             </mat-select>
         </div>
         <div class="col-md-2">
-            <mat-label class="labels">Semesters</mat-label>
+            <mat-label class="labels">Semester</mat-label>
             <mat-select name="terms"  [(ngModel)]="terms">
                 <mat-option *ngFor="let terms of termnumbers" [value]="terms">
                     Semester - {{terms}}
@@ -173,7 +173,13 @@
             </mat-select>
         </div>
         <div class="col-md-2">
-            <mat-label class="labels">Semesters</mat-label>
+            <mat-label class="labels">Department</mat-label>
+            <mat-select [(ngModel)]="selectedDept">
+                <mat-option *ngFor="let dept of departments" [value]="dept">{{dept}}</mat-option>
+            </mat-select>
+        </div>
+        <div class="col-md-2">
+            <mat-label class="labels">Semester</mat-label>
             <mat-select name="terms"  [(ngModel)]="terms">
                 <mat-option *ngFor="let terms of termnumbers" [value]="terms">
                     Semester - {{terms}}
