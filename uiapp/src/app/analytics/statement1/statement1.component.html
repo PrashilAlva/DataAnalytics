@@ -38,8 +38,8 @@
     <h1 *ngIf="notPlaced" style="text-align:center;font-weight:normal;">NO PLACEMENT OFFERS YET</h1>
 
     <div class="row" *ngIf="display">
+        <h3 style="font-weight: normal;">PLACEMENT OFFERS</h3>
         <mat-card class="example-card">
-            <mat-card-title>PLACEMENT DETAILS</mat-card-title>
         <mat-card-content *ngFor="let r of data">
            
                 <p ><b>COMPANY : </b>{{r["company"]}}</p>
